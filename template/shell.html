@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shell</title>
+    <script src = "/static/vendor/jquery/jquery.min.js"></script>
+</head>
+<body>
+    <div id="result" style="background-color: #0c0c0c;color: white">
+    {{ result.data|safe }}
+    </div>
+    <br>
+    <input id="command" type="text" name="command">
+    <button id="commit">commit</button>
+
+    <script>
+        $(
+                function(){
+                    $("#commit").click(
+                            function(){
+                                var command = $("#command").val();
+                                if(command){
+                                    $.ajax(
+                                            {url:'eq/cmd?command='+command,
+                                            type:"get",
+                                            data:"",
+                                            success:function(data){
+                                                var result = data["result"];
+                                                $("#result").append(
+                                                        "<p>"+result+"</p>"
+                                                )
+                                            },
+                                            error:function(error){
+                                                console.log(data)
+                                            }
+                                            }
+                                    )
+                                }else{
+                                    alert("command not be null")
+                                }
+                            }
+                    )
+                }
+        )
+    </script>
+
+</body>
+</html>
