@@ -254,6 +254,7 @@ def shell(request):
                     print(e)
                     return HttpResponseRedirect("/eq/")
 
+
 def command(request):
     ip = request.COOKIES.get("ip")
     if ip:

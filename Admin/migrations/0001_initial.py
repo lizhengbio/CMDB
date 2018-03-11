@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=32, verbose_name=b'\xe6\x9d\x83\xe9\x99\x90\xe5\x90\x8d\xe7\xa7\xb0')),
                 ('description', models.TextField(verbose_name=b'\xe6\x9d\x83\xe9\x99\x90\xe6\x8f\x8f\xe8\xbf\xb0')),
-                ('obj_id', models.IntegerField(verbose_name=b'\xe6\x9d\x83\xe9\x99\x90\xe5\xaf\xb9\xe8\xb1\xa1')),
+                ('url', models.CharField(max_length=32, verbose_name=b'URL')),
             ],
         ),
         migrations.CreateModel(
